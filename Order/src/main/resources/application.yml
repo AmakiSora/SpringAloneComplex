@@ -1,2 +1,18 @@
 server:
   port: 2021
+spring:
+  application:
+    name: order-service
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+      discovery:
+        username: order
+        password: cosmos
+        namespace: test #命名空间
+        ephemeral: false #永久实例 当服务下线就会将服务剔除
+        #service: 默认取spring.application.name
+        #group: 默认DEFAULT_GROUP 分组管理
+        #weight: 权重,配合负载均衡
+        #metadata: 元数据 扩展使用
+        #更多具体设置,参考https://nacos.io/zh-cn/docs/system-configurations.html

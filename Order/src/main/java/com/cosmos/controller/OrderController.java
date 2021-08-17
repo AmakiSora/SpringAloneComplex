@@ -14,7 +14,7 @@ public class OrderController {
     @GetMapping("/add")
     public String add(){
         System.out.println("下单成功");
-        String msg = restTemplate.getForObject("http://localhost:2022/stock/reduce", String.class);
+        String msg = restTemplate.getForObject("http://stock-service/stock/reduce", String.class);
         System.out.println(msg);
         return "下单成功"+msg;
     }
