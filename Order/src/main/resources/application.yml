@@ -16,3 +16,13 @@ spring:
         #weight: 权重,配合负载均衡
         #metadata: 元数据 扩展使用
         #更多具体设置,参考https://nacos.io/zh-cn/docs/system-configurations.html
+#设置负载均衡策略(方法2)只针对单个服务
+#stock-service:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+ribbon:
+  eager-load:
+    #配置饥饿加载的服务
+    clients: stock-service
+    #开启ribbon饥饿加载
+    enabled: true
