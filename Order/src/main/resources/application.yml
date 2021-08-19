@@ -26,3 +26,19 @@ ribbon:
     clients: stock-service
     #开启ribbon饥饿加载
     enabled: true
+#springboot默认日志级别是info,feign的debug日志级别就不会输出
+logging:
+  level:
+    com.cosmos.feign: debug
+#Feign日志局部配置(方法2)
+feign:
+  client:
+    config:
+      stock-service:
+        loggerLevel: BASIC
+        #设置契约配置(兼容旧版Feign注解,一般在升级旧版系统用)
+        #contract: feign.Contract.Default
+        #连接超时时间(调用接口时间超时)
+        #connectTimeout: 5000
+        #自定义拦截器
+        #requestInterceptors[0]: com.cosmos.feign.interceptor.CustomFeignInterceptor
