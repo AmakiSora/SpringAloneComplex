@@ -1,0 +1,9 @@
+#nacos配置中心,该配置的文件名必须为bootstrap.yml
+#下面只介绍简单使用,深入的(公共配置,权限管理,命名空间,分组等)功能没有详细演示
+spring:
+  cloud:
+    nacos:
+      config:
+        file-extension: yml #指定默认配置文件的格式
+        name: order-service
+        namespace: test
